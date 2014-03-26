@@ -1,4 +1,4 @@
-CFLAGS=-std=c99 -pedantic -Wall -Wextra -g
+CFLAGS := -std=c99 -pedantic -Wall -Wextra -g
 
 .PHONY: all clean debug
 .SUFFIXES: .o .c
