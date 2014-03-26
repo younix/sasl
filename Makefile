@@ -3,7 +3,7 @@ CFLAGS=-std=c99 -pedantic -Wall -Wextra -g
 .PHONY: all clean debug
 .SUFFIXES: .o .c
 
-test: test.o sasl.o base64.o
+test: test.o sasl.o
 	gcc -o $@ -lm test.o sasl.o base64.o
 
 sasl.o: base64.o

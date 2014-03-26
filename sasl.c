@@ -10,7 +10,8 @@ sasl_plain(char *user, char *pass)
 {
 	char *auth = NULL;
 	char *authstr = NULL;
-	ssize_t authlen, b64len;
+	ssize_t authlen;
+	size_t b64len;
 
 	if ((authlen = asprintf(&auth, ".%s.%s", user, pass)) < 0)
 		return NULL;
@@ -18,11 +19,12 @@ sasl_plain(char *user, char *pass)
 	auth[0] = '\0';
 	auth[strlen(user) + 1] = '\0';
 
-	authstr = base64_encode(auth, authlen, &b64len);
+	authstr = base64_encode(auth, (size_t)authlen, &b64len);
 
 	return authstr;
 }
 
+#if 0
 char *
 sasl_digest_md5(char *chellence, char *user, char *pass, char *realm)
 {
@@ -34,3 +36,4 @@ sasl_digest_md5(char *chellence, char *user, char *pass, char *realm)
 
 	return authstr;
 }
+#endif
