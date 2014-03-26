@@ -6,7 +6,7 @@
 #include "base64.h"
 
 int
-main(int argc, char **argv)
+main()
 {
 	if (strcmp(sasl_plain("user", "pass"), "AHVzZXIAcGFzcw==")  == 0)
 		printf("SASL PLAIN: OK\n");

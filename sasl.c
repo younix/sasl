@@ -10,7 +10,7 @@ sasl_plain(char *user, char *pass)
 {
 	char *auth = NULL;
 	char *authstr = NULL;
-	size_t authlen, b64len;
+	ssize_t authlen, b64len;
 
 	if ((authlen = asprintf(&auth, ".%s.%s", user, pass)) < 0)
 		return NULL;
