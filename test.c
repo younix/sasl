@@ -21,7 +21,7 @@ main()
 
 	size_t size;
 	char *p = base64_decode(c, strlen(c), &size);
-	printf("%s\n\n", p);
+	printf("%s\n", p);
 
 	p = base64_decode(b, strlen(b), &size);
 	printf("%s\n", p);
