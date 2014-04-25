@@ -85,9 +85,3 @@ build_decoding_table(void)
 	for (uint32_t i = 0; i < 0x40; i++)
 		decoding_table[(int)encoding_table[i]] = i;
 }
-
-void
-base64_cleanup(void)
-{
-	free(decoding_table);
-}
