@@ -1,6 +1,8 @@
 CC ?= cc
 CFLAGS := -std=c99 -pedantic -Wall -Wextra -g
 
+include Makefile.inc
+
 .PHONY: all clean debug
 .SUFFIXES: .o .c
 
